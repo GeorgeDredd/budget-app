@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Budget App - Budgets</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine|Inconsolata|Droid+Sans|Sofia&effect=shadow-multiple">
+    <script src="https://kit.fontawesome.com/8dc8767706.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="budget-container">
+            <nav class="navbar">
+                <ul class="list">
+                    <li class="list-item  font-effect-shadow-multiple "><a href="index.html" id="home" >Home</a></li>
+                    <li class="list-item font-effect-shadow-multiple active"><a href="budgets.html" id="budgets">Add Budgets</a></li>
+                </ul>
+            </nav>
+            <div class="budget-result budget-result-two" id="budget-result-two">
+                <div>
+                    <p>Total Budget</p>
+                    <p class="balance">$5000.00</p>
+                </div>
+                <div>
+                    <p>Expenses</p>
+                    <p class="balance">$3800.00</p>
+                </div>
+                <div>
+                    <p>Balance</p>
+                    <p class="balance">$1200.00</p>
+                </div>
+            </div>
+
+            <div class="budget-input">
+                <div class="budget-input-div">
+                    <form action="">
+                        <label for="budget-amount"> Budget</label>
+                        <input type="number" name="budget-amount" id="" placeholder="Enter Budget Amount">
+
+                        <input type="submit" value="Set Budget">
+                    </form>
+
+                    <form action="">
+                        <label for="expense-amount"> Expenses</label>
+                        <input type="text" name="expense-amount" id="" placeholder="Enter Name">
+                        <input type="number" name="expense-amount" id="" placeholder="Enter Expense Amount">
+
+                        <input type="submit" value="Set Expenses">
+                    </form>
+
+                </div>
+            </div>
+
+            <div class="budget-body">
+                <div class="budget-output-title">
+                    <p class="font-effect-shadow-multiple">Expense List</p>
+                </div>
+                <div class="budget-output-list">
+                    <div class="output-list-item output-list-item-two">
+                        <div class="output-list-name">
+                            <div>
+                                <i class="fa-solid fa-calendar-check fa-2x fa-flip" style="--fa-animation-duration: 3s;"></i>
+    
+                            </div>
+                            <div>
+                                <p class="budget-name">Transport</p>
+                                
+                            </div>
+                        </div>
+                        <div>
+                            <p class="budget-amount">$500.00</p>
+                        </div>
+                        <div>
+                            <button>Edit <i class="fa-solid fa-calendar-check fa-2x"></i></button>
+                            <button>Delete<i class="fa-solid fa-calendar-check fa-2x"></i></button>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="budget-output-list">
+                    <div class="output-list-item output-list-item-two">
+                        <div class="output-list-name">
+                            <div>
+                                <i class="fa-solid fa-calendar-check fa-2x fa-flip" style="--fa-animation-duration: 3s;"></i>
+    
+                            </div>
+                            <div>
+                                <p class="budget-name">Grocery</p>
+                                
+                            </div>
+                        </div>
+                        <div>
+                            <p class="budget-amount">$500.00</p>
+                        </div>
+                        <div>
+                            <button>Edit <i class="fa-solid fa-calendar-check fa-2x"></i></button>
+                            <button>Delete<i class="fa-solid fa-calendar-check fa-2x"></i></button>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="budget-output-list">
+                    <div class="output-list-item output-list-item-two">
+                        <div class="output-list-name">
+                            <div>
+                                <i class="fa-solid fa-calendar-check fa-2x fa-flip" style="--fa-animation-duration: 3s;"></i>
+    
+                            </div>
+                            <div>
+                                <p class="budget-name">Rent</p>
+                                
+                            </div>
+                        </div>
+                        <div>
+                            <p class="budget-amount">$500.00</p>
+                        </div>
+                        <div>
+                            <button>Edit <i class="fa-solid fa-calendar-check fa-2x"></i></button>
+                            <button>Delete<i class="fa-solid fa-calendar-check fa-2x"></i></button>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+           
+        </div>
+    </div>
+</body>
+</html>
