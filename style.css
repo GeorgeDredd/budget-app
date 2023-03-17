@@ -87,7 +87,6 @@ hgroup > h5 {
 
 }
 
-
 .budget-result {
     /* height: 200px; */
     width: 100%;
@@ -228,13 +227,16 @@ hgroup > h5 {
     font-family: 'Poppins', sans-serif;
 }
 
-/* .output-list-name {
+.output-list-name {
     display: flex;
     align-items: center;
-} */
+    gap: 20px;
+}
 
 /* Icons */
-.fa-calendar-check {
+.fa-square-check,
+.fa-calendar-check
+{
     color: rgb(255, 123, 0);
 }
 
