@@ -18,19 +18,32 @@ body   {
 
 div.container {
     display: flex;
+    flex-direction: column;
     justify-content: center;
+
 }
 
 div.budget-container {
     width: 100%;
-    max-width: 1200px;
     background-color: #ffffffff;
     box-shadow: 0px 0px 10px #88888888;
     padding: 20px;
-    margin: 20px;
+}
+
+@media only screen and (min-width: 992px) {
+    div.budget-container {
+        max-width: 1200px;
+        margin: 20px;
+    }
 }
 
 /* header*/
+.navbar {
+    position: sticky;
+    top: 0;
+    background-color: white;
+}
+
 .list {
     list-style-type: none;
     display: flex;
@@ -66,17 +79,17 @@ div.budget-container {
     border-right: none;
 }
 
-hgroup,
+/* hgroup, */
 .budget-header,
 .budget-result,
-.budget-input,
-.navbar
+.budget-input
 {
+    margin-top: 20px;
     margin-bottom: 50px;
 }
 
 hgroup {
-    font-size: 32px;
+    font-size: 20px;
     text-transform: capitalize;
 }
 
@@ -93,41 +106,39 @@ hgroup > h5 {
     box-shadow: 0px 0px 10px #88888888;
     /* position: relative; */
     border-radius: 20px;
-    padding: 40px;
+    padding: 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     color: white;
+    font-size: 16px;
+}
+
+.budget-result  p.balance{
     font-size: 25px;
 }
 
 #budget-result-two {
-    font-size: 22px;
+    font-size: 16px;
     text-align: center;
-    line-height: 25pt;
     background-image:  none;
     background-color: rgb(255, 123, 0)} 
 
-.budget-result  p.balance{
-    font-size: 50px;
-}
 
-.budget-result-two  p.balance
+.budget-result-two p.balance
 {
-    font-size: 16px;
+    font-size: 12px;
 }
 
 
 .budget-result > .add-icon {
-    font-size: 50px;
-    width: 100px;
-    height: 100px;
-   display: block;
+    font-size: 25px;
+    width: 50px;
+    height: 50px;
     border-radius: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    align-self: flex-end;
     background-color: #ffffffff;
     color:  #000000;
     border: 5px solid white;
@@ -146,23 +157,72 @@ hgroup > h5 {
     background-image: linear-gradient(to right, rgb(255, 123, 0), rgb(255, 251, 0));
  }
  
- .budget-result:nth-child(2) {
-    background-image: linear-gradient(to right, rgb(255, 251, 0), rgb(255, 123, 0));
-     width: 98%;
-     flex-direction: row-reverse;
-  }
- 
-  .budget-result:nth-child(3) {
-    background-image: linear-gradient(to right, rgb(255, 123, 0), rgb(255, 251, 0));
-     width: 98%;
- 
-  }
+.budget-result:nth-child(2) {
+background-image: linear-gradient(to right, rgb(255, 251, 0), rgb(255, 123, 0));
+    width: 98%;
+    flex-direction: row-reverse;
+}
+
+.budget-result-two:nth-child(2) {
+    flex-direction: row;
+}
+
+
+.budget-result:nth-child(3) {
+background-image: linear-gradient(to right, rgb(255, 123, 0), rgb(255, 251, 0));
+    width: 98%;
+
+}
+
+@media only screen and (min-width: 992px) {
+    .budget-result-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+
+    hgroup {
+        font-size: 32px;
+    }
+    
+    hgroup > h5 {
+        font-size: 40px;    
+    }
+
+    .budget-result {
+        padding: 40px;
+        justify-content: space-between;
+        font-size: 25px;
+    }
+
+    .budget-result  p.balance{
+        font-size: 50px;
+    }
+
+    #budget-result-two {
+        font-size: 22px;
+        line-height: 25pt;
+    }
+        
+    .budget-result-two p.balance
+    {
+        font-size: 16px;
+    }
+
+    .budget-result > .add-icon {
+        font-size: 50px;
+        width: 100px;
+        height: 100px;
+}
+}
+
+
 
 
 /* Body */
 
 .budget-body {
-    font-size: 25px;
+    font-size: 15px;
     height: auto;
     box-shadow: 0px 0px 10px #88888888;
     border-radius: 20px;
@@ -181,16 +241,17 @@ hgroup > h5 {
 
 .output-list-item {
     /* text-align: center; */
-    font-size: 18px;
+    font-size: 16px;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     /* display: grid;
     width: 100%;
     grid-template-columns: repeat(3, 1fr);
     justify-content: space-between;
     align-content: center; */
     border-bottom: 1px solid #eeeeee;
-    padding: 20px;
+    padding: 10px;
     color: #88888888;
 
 }
@@ -203,13 +264,6 @@ hgroup > h5 {
 
 }
 
-/* .output-list-item-two > div:nth-child(2){
-    border: 4px solid rgb(255, 123, 0);
-    width: 100%;
-
-} */
-
-
 .budget-name {
     font-weight: 900;
     color: #000000;
@@ -218,7 +272,7 @@ hgroup > h5 {
 .output-list-item button {
     font-size: 15px;
     background-color: rgb(255, 123, 0);
-    padding: 8px 16px;
+    padding: 4px 8px;
     outline: none;
     border-radius: 40px;
     border: none;
@@ -228,10 +282,39 @@ hgroup > h5 {
 }
 
 .output-list-name {
+    width: 100px;
     display: flex;
-    align-items: center;
-    gap: 20px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
 }
+
+@media only screen and (min-width: 992px) {
+    .output-list-name {
+    flex-direction: row;
+    align-items: center;
+    }
+
+    .budget-body {
+        font-size: 25px;
+        padding: 20px;
+        
+    }
+
+    .output-list-item {
+        font-size: 18px;
+        justify-content: space-between;
+        padding: 20px;
+    
+    }
+
+    .output-list-item button {
+        font-size: 15px;
+        background-color: rgb(255, 123, 0);
+        padding: 8px 16px;
+    }
+}
+
 
 /* Icons */
 .fa-square-check,
@@ -244,29 +327,28 @@ hgroup > h5 {
 /* Budget input */
 .budget-input-div {
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
     /* align-items: center; */
-    /* gap: 20px; */
+    gap: 20px;
 }
 
 
 .budget-input-div form {
-    font-size: 20px;
-    width: 48%;
-    padding: 20px;
+    font-size: 10px;
+    width: 100%;
+    padding: 10px;
     display: flex;
     flex-direction: column;
     box-shadow: 0px 0px 10px #88888888;
     border-radius: 4px;
-
-
 }
 
 .budget-input-div form input{
-    padding: 8px 16px;
+    padding: 4px 8px;
     margin: 10px 0;
+    font-size: 16px;
     border-radius: 4px;
-    font-size: 20px;
     border: none;
     font-family: 'Poppins', sans-serif;
 
@@ -282,8 +364,8 @@ hgroup > h5 {
 .budget-input-div form input[type=submit]{
     color: #ffffffff;
     background-color: rgb(255, 123, 0);
-    padding: 8px 16px;
-    width: 200px;
+    padding: 4px 8px;
+    width: 150px;
     cursor: pointer;
 
 }
@@ -292,3 +374,37 @@ hgroup > h5 {
     font-family: 'Poppins', sans-serif;
 }
 
+input[type=checkbox]  {
+    width: 25px;
+    height: 25px;
+    padding: 20px;
+    /* accent-color: rgb(255, 123, 0); */
+    outline: 2px solid rgb(255, 123, 0);
+}
+
+@media only screen and (min-width: 992px) {
+    .budget-input-div {
+        flex-direction: row;
+        gap: 20px;
+    }
+    
+    
+    .budget-input-div form {
+        font-size: 20px;
+        padding: 20px;
+    }
+
+    .budget-input-div form input{
+        padding: 8px 16px;
+        margin: 10px 0;
+        font-size: 20px;       
+    }
+
+    .budget-input-div form input[type=submit]{
+        padding: 8px 16px;
+        width: 200px;
+    
+    }
+
+}
+    
