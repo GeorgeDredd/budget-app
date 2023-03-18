@@ -282,7 +282,7 @@ background-image: linear-gradient(to right, rgb(255, 123, 0), rgb(255, 251, 0));
 }
 
 .output-list-name {
-    width: 100px;
+    width: 120px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -293,6 +293,8 @@ background-image: linear-gradient(to right, rgb(255, 123, 0), rgb(255, 251, 0));
     .output-list-name {
     flex-direction: row;
     align-items: center;
+    width: 150px;
+
     }
 
     .budget-body {
