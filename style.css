@@ -20,6 +20,7 @@ div.container {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
 
 }
 
@@ -41,6 +42,9 @@ div.budget-container {
 .navbar {
     position: sticky;
     top: 0;
+    /* position: fixed;
+    top: 0; */
+    width: 100%;
     background-color: white;
 }
 
@@ -81,7 +85,7 @@ div.budget-container {
 
 /* hgroup, */
 .budget-header,
-.budget-result,
+.budget-result-two,
 .budget-input
 {
     margin-top: 20px;
@@ -112,6 +116,8 @@ hgroup > h5 {
     align-items: center;
     color: white;
     font-size: 16px;
+    margin-top: 20px;
+
 }
 
 .budget-result  p.balance{
@@ -151,6 +157,15 @@ hgroup > h5 {
     color: #ffffffff;
 }
 
+.budget-result-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+}
+
+
 
 .budget-result:nth-child(1) {
     grid-column: span 3;
@@ -159,19 +174,17 @@ hgroup > h5 {
  
 .budget-result:nth-child(2) {
 background-image: linear-gradient(to right, rgb(255, 251, 0), rgb(255, 123, 0));
-    width: 98%;
     flex-direction: row-reverse;
 }
 
 .budget-result-two:nth-child(2) {
     flex-direction: row;
+
 }
 
 
 .budget-result:nth-child(3) {
 background-image: linear-gradient(to right, rgb(255, 123, 0), rgb(255, 251, 0));
-    width: 98%;
-
 }
 
 @media only screen and (min-width: 992px) {
