@@ -12,7 +12,6 @@ const clearBtn = document.querySelector("#clear-btn");
 
 
 
-
 setBudgetBtn.addEventListener("click", e => {
     e.preventDefault();
     if(budgetAmount.value) {
@@ -58,7 +57,6 @@ function getBalance() {
 
 
 function formatBalance(value) {
-    console.log(value < 0);
     if (value < 0) {
         currentBalance.classList.add("red");
         currentBalance.classList.remove("green");
@@ -83,25 +81,25 @@ function addBudget() {
             <input type="checkbox" name="" id="">
         </div>
         <div>
-            <li class="budget-name">${expenseName.value}</li>
+            <li class="budget-name expense-item" contentEditable="false">${expenseName.value}</li>
             
         </div>
         </div>
-        <div>
-            <li class="budget-amount">$${expenseAmount.value}</li>
+        <div class="output-list-amount">
+            <li class="budget-amount expense-item" contentEditable="false">$${expenseAmount.value}</li>
         </div>
-        <div>
-            <button><i class="fa-solid fa-pen-to-square"></i></button>
-            <button class=""> <i class="fa-solid fa-trash delete-btn"></i></button>
+        <div class="output-list-icon">
+            <button><i class="fa-solid fa-pen-to-square edit-btn"></i></button>
+            <button> <i class="fa-solid fa-trash delete-btn"></i></button>
         </div>
     `
+    saveData();
     expenseList.appendChild(div);
 }
 
 expenseList.addEventListener("click", (e) => {
     const outputListName = e.target.parentElement.parentElement
     if(e.target.tagName === "INPUT") {
-        console.log(e)
         outputListName.lastElementChild.firstElementChild.classList.toggle("checked");
         outputListName.nextElementSibling.firstElementChild.classList.toggle("checked");
         // e.target.classList.toggle("checked");
@@ -110,6 +108,26 @@ expenseList.addEventListener("click", (e) => {
     else if(e.target.classList.contains("delete-btn")) {
         outputListName.parentElement.remove();
         saveData();
+    }
+    else if(e.target.classList.contains("edit-btn")) {
+        // item.setAttribute("contentEditable", "true")
+        const expenseItem = document.querySelectorAll(".expense-item")
+        // console.log(expenseItem);
+        expenseItem.forEach(item => {
+            if (item.contentEditable == "true") {
+                e.target.className = "fa-solid fa-pen-to-square edit-btn";
+                item.contentEditable = "false";
+            } 
+            else {
+                item.contentEditable = "true";
+                outputListName.parentElement.firstElementChild.lastElementChild.firstElementChild.focus();
+                e.target.className = "fa-solid fa-check edit-btn";
+            }
+            item.addEventListener("focusout", () => {
+                e.target.className = "fa-solid fa-pen-to-square edit-btn";
+                saveData();
+            });
+        });        
     }
 }, false)
 
@@ -132,8 +150,3 @@ function showData() {
 }
 
 showData();
-
-
-
-
-
