@@ -5,6 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Budget App - Budgets</title>
+    <!--==================== FONT AWESOME ====================-->
+    <link rel="stylesheet" href="assets/font-awesome/css/all.min.css">
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -24,15 +26,15 @@
             <div class="budget-result budget-result-two" id="budget-result-two">
                 <div>
                     <p>Budget</p>
-                    <p class="balance">$5000.00</p>
+                    <p class="current-budget">$0</p>
                 </div>
                 <div>
                     <p>Expenses</p>
-                    <p class="balance">$3800.00</p>
+                    <p class="current-expenses">$0</p>
                 </div>
                 <div>
                     <p>Balance</p>
-                    <p class="balance">$1200.00</p>
+                    <p class="current-balance">$0</p>
                 </div>
             </div>
 
@@ -40,17 +42,17 @@
                 <div class="budget-input-div">
                     <form action="">
                         <label for="budget-amount"> Budget</label>
-                        <input type="number" name="budget-amount" id="" placeholder="Enter Budget Amount">
+                        <input type="number" name="budget-amount" id="budget-amount" placeholder="Enter Budget Amount">
 
-                        <input type="submit" value="Set Budget">
+                        <input type="submit" value="Set Budget" id="set-budget-btn">
                     </form>
 
                     <form action="">
                         <label for="expense-amount"> Expenses</label>
-                        <input type="text" name="expense-amount" id="" placeholder="Enter Name">
-                        <input type="number" name="expense-amount" id="" placeholder="Enter Expense Amount">
+                        <input type="text" name="expense-name" id="expense-name" placeholder="Enter Name">
+                        <input type="number" name="expense-amount" id="expense-amount" placeholder="Enter Expense Amount">
 
-                        <input type="submit" value="Set Expenses">
+                        <input type="submit" value="Set Expenses" id="set-expenses-btn">
                     </form>
 
                 </div>
@@ -59,9 +61,10 @@
             <div class="budget-body">
                 <div class="budget-output-title">
                     <p class="font-effect-shadow-multiple">Expense List</p>
+                    <p class="font-effect-shadow-multiple clear-btn" id="clear-btn">Clear</p>
                 </div>
                 <div class="budget-output-list">
-                    <div class="output-list-item output-list-item-two">
+                    <!-- <div class="output-list-item output-list-item-two">
                         <div class="output-list-name">
                             <div>
                                 <input type="checkbox" name="" id="">
@@ -79,10 +82,10 @@
                             <button><i class="fa-solid fa-pen-to-square"></i></button>
                             <button> <i class="fa-solid fa-trash"></i></button>
                         </div>
-                    </div>
+                    </div> -->
                     
                 </div>
-                <div class="budget-output-list">
+                <!-- <div class="budget-output-list">
                     <div class="output-list-item output-list-item-two">
                         <div class="output-list-name">
                             <div>
@@ -124,10 +127,11 @@
                         </div>
                     </div>
                     
-                </div>
+                </div> -->
             </div>
            
         </div>
     </div>
+    <script src="script.js"></script>
 </body>
 </html>
