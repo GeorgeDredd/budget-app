@@ -119,12 +119,17 @@ expenseList.addEventListener("click", (e) => {
                 item.contentEditable = "false";
             } 
             else {
-                item.contentEditable = "true";
-                outputListName.parentElement.firstElementChild.lastElementChild.firstElementChild.focus();
                 e.target.className = "fa-solid fa-check edit-btn";
+                outputListName.parentElement.firstElementChild.lastElementChild.firstElementChild.focus();
+                expenseItem.forEach(item => {
+                    item.contentEditable = "true";
+                });
             }
             item.addEventListener("focusout", () => {
                 e.target.className = "fa-solid fa-pen-to-square edit-btn";
+                expenseItem.forEach(item => {
+                    item.contentEditable = "false";
+                });
                 saveData();
             });
         });        
