@@ -17,6 +17,14 @@ a {
     cursor: pointer;
 }
 
+.active-form {
+    display: block !important;
+}
+
+.inactive-form {
+    display: none !important;
+}
+
 
 body   {
     font-family: 'Poppins', sans-serif;
@@ -63,14 +71,14 @@ div.budget-container {
 
 .list-item {
     width: 100%;
-    border-right: 5px solid rgb(255, 123, 0);
+    border-right: 5px solid #36454F;
     padding: 8px 12px;
     transition: ease-in 200ms;
 
 }
 
 .active {
-    background-color:  rgb(255, 123, 0);
+    background-color:  #36454F;
 
 }
 
@@ -106,7 +114,7 @@ hgroup {
 hgroup > h5 {
     font-size: 40px;
     font-family: "Sofia", sans-serif;
-    color: rgb(255, 123, 0);
+    color: #36454F;
 
 }
 
@@ -134,7 +142,7 @@ hgroup > h5 {
     font-size: 16px;
     text-align: center;
     background-image:  none;
-    background-color: rgb(255, 123, 0)} 
+    background-color: #36454F} 
 
 
 .budget-result-two p.balance
@@ -175,11 +183,11 @@ hgroup > h5 {
 
 .budget-result:nth-child(1) {
     grid-column: span 3;
-    background-image: linear-gradient(to right, rgb(255, 123, 0), rgb(255, 251, 0));
+    background-image: linear-gradient(to right, #36454F, #A9A9A9);
  }
  
 .budget-result:nth-child(2) {
-background-image: linear-gradient(to right, rgb(255, 251, 0), rgb(255, 123, 0));
+background-image: linear-gradient(to right, #A9A9A9, #36454F);
     flex-direction: row-reverse;
 }
 
@@ -190,7 +198,7 @@ background-image: linear-gradient(to right, rgb(255, 251, 0), rgb(255, 123, 0));
 
 
 .budget-result:nth-child(3) {
-background-image: linear-gradient(to right, rgb(255, 123, 0), rgb(255, 251, 0));
+background-image: linear-gradient(to right, #36454F, #A9A9A9);
 }
 
 @media only screen and (min-width: 992px) {
@@ -260,6 +268,10 @@ background-image: linear-gradient(to right, rgb(255, 123, 0), rgb(255, 251, 0));
 
 }
 
+.expense-title {
+    text-align: center;
+}
+
 .output-list-item {
     /* text-align: center; */
     font-size: 16px;
@@ -279,7 +291,7 @@ background-image: linear-gradient(to right, rgb(255, 123, 0), rgb(255, 251, 0));
 
 .output-list-item-two {
     border: none;
-    border-left: 4px solid rgb(255, 123, 0);
+    border-left: 4px solid #36454F;
     width: 100%;
 }
 
@@ -308,12 +320,12 @@ background-image: linear-gradient(to right, rgb(255, 123, 0), rgb(255, 251, 0));
 }
 
 .output-list-item button {
-    font-size: 15px;
-    background-color: rgb(255, 123, 0);
+    font-size: 25px;
+    padding: 8px 10px;
+    background-color: transparent;
+    color: #36454F;
     outline: none;
-    border-radius: 40px;
     border: none;
-    color: #ffffffff;
     cursor: pointer;
     font-family: 'Poppins', sans-serif;
 }
@@ -350,9 +362,7 @@ background-image: linear-gradient(to right, rgb(255, 123, 0), rgb(255, 251, 0));
     }
 
     .output-list-item button {
-        font-size: 15px;
-        background-color: rgb(255, 123, 0);
-        padding: 8px 16px;
+        font-size: 20px;
     }
 }
 
@@ -361,23 +371,32 @@ background-image: linear-gradient(to right, rgb(255, 123, 0), rgb(255, 251, 0));
 .fa-square-check,
 .fa-calendar-check
 {
-    color: rgb(255, 123, 0);
+    color: #36454F;
 }
 
-.fa-solid {
+/* .fa-solid {
     width: 100%;
     height: 100%;
     padding: 8px 10px;
-}
+} */
 
 
 /* Budget input */
+.budget-input {
+    display: flex;
+    justify-content: center;
+}
+
+
 .budget-input-div {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     /* align-items: center; */
     gap: 20px;
+    width: 100%;
+    max-width: 768px;
+
 }
 
 
@@ -410,7 +429,7 @@ background-image: linear-gradient(to right, rgb(255, 123, 0), rgb(255, 251, 0));
 
 .budget-input-div form input[type=submit]{
     color: #ffffffff;
-    background-color: rgb(255, 123, 0);
+    background-color: #36454F;
     padding: 4px 8px;
     width: 150px;
     cursor: pointer;
@@ -425,8 +444,8 @@ input[type=checkbox]  {
     width: 25px;
     height: 25px;
     padding: 20px;
-    /* accent-color: rgb(255, 123, 0); */
-    /* outline: 2px solid rgb(255, 123, 0); */
+    accent-color: #36454F;
+    /* outline: 2px solid #36454F; */
 }
 
 li {
@@ -450,7 +469,7 @@ li.checked {
 
 .clear-btn {
     color: #ffffffff;
-    background-color: rgb(255, 123, 0);
+    background-color: #36454F;
     padding: 4px 8px;
     width: 150px;
     cursor: pointer;
@@ -482,4 +501,131 @@ li.checked {
         width: 200px;
     
     }
+}
+
+
+/* TOAST */
+:root {
+  --dark: #34495E;
+  --light: #ffffff;
+  --success: #0ABF30;
+  --error: #E24D4C;
+  --warning: #E9BD0C;
+  --info: #3498DB;
+}
+.notifications {
+  position: fixed;
+  top: 30px;
+  right: 20px;
+}
+.notifications :where(.toast, .column) {
+  display: flex;
+  align-items: center;
+}
+.notifications .toast {
+  width: 400px;
+  position: relative;
+  overflow: hidden;
+  list-style: none;
+  border-radius: 4px;
+  padding: 16px 17px;
+  margin-bottom: 10px;
+  background: var(--light);
+  justify-content: space-between;
+  animation: show_toast 0.3s ease forwards;
+}
+@keyframes show_toast {
+  0% {
+    transform: translateX(100%);
+  }
+  40% {
+    transform: translateX(-5%);
+  }
+  80% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-10px);
+  }
+}
+.notifications .toast.hide {
+  animation: hide_toast 0.3s ease forwards;
+}
+@keyframes hide_toast {
+  0% {
+    transform: translateX(-10px);
+  }
+  40% {
+    transform: translateX(0%);
+  }
+  80% {
+    transform: translateX(-5%);
+  }
+  100% {
+    transform: translateX(calc(100% + 20px));
+  }
+}
+.toast::before {
+  position: absolute;
+  content: "";
+  height: 3px;
+  width: 100%;
+  bottom: 0px;
+  left: 0px;
+  animation: progress 5s linear forwards;
+}
+@keyframes progress {
+  100% {
+    width: 0%;
+  }
+}
+.toast.success::before, .btn#success {
+  background: var(--success);
+}
+.toast.error::before, .btn#error {
+  background: var(--error);
+}
+.toast.warning::before, .btn#warning {
+  background: var(--warning);
+}
+.toast.info::before, .btn#info {
+  background: var(--info);
+}
+.toast .column i {
+  font-size: 1.75rem;
+}
+.toast.success .column i {
+  color: var(--success);
+}
+.toast.error .column i {
+  color: var(--error);
+}
+.toast.warning .column i {
+  color: var(--warning);
+}
+.toast.info .column i {
+  color: var(--info);
+}
+.toast .column span {
+  font-size: 1.07rem;
+  margin-left: 12px;
+}
+.toast i:last-child {
+  color: #aeb0d7;
+  cursor: pointer;
+}
+.toast i:last-child:hover {
+  color: var(--dark);
+}
+
+
+@media screen and (max-width: 530px) {
+  .notifications {
+    width: 95%;
+  }
+  .notifications .toast {
+    width: 100%;
+    font-size: 1rem;
+    margin-left: 20px;
+  }
 }

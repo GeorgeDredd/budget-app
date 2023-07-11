@@ -16,6 +16,7 @@
 </head>
 <body>
     <div class="container">
+        <ul class="notifications"></ul>
         <nav class="navbar">
             <ul class="list">
                 <li class="list-item  font-effect-shadow-multiple "><a href="index.html" id="home" >Home</a></li>
@@ -39,31 +40,36 @@
             </div>
 
             <div class="budget-input">
-                <div class="budget-input-div">
+                <div class="budget-input-div  active-form" id="budget-form">
                     <form action="">
-                        <label for="budget-amount"> Budget</label>
+                        <label for="budget-amount"> Budget: </label>
+                        <input type="text" name="budget-input-name" id="budget-input-name" placeholder="Enter Budget Name">
                         <input type="number" name="budget-amount" id="budget-amount" placeholder="Enter Budget Amount">
-
                         <input type="submit" value="Set Budget" id="set-budget-btn">
                     </form>
+                </div>
 
-                    <form action="">
+                <div class="budget-input-div   inactive-form" id="expenses-form">
+                     <form action="" class="">
                         <label for="expense-amount"> Expenses</label>
-                        <input type="text" name="expense-name" id="expense-name" placeholder="Enter Name">
+                        <input type="text" name="expense-name" id="expense-name" placeholder="Enter Expense Name">
                         <input type="number" name="expense-amount" id="expense-amount" placeholder="Enter Expense Amount">
 
                         <input type="submit" value="Set Expenses" id="set-expenses-btn">
                     </form>
-
                 </div>
             </div>
 
             <div class="budget-body">
                 <div class="budget-output-title">
-                    <p class="font-effect-shadow-multiple">Expense List</p>
+                    <p class="font-effect-shadow-multiple">Budget List</p>
                     <p class="font-effect-shadow-multiple clear-btn" id="clear-btn">Clear</p>
                 </div>
                 <div class="budget-output-list">
+
+
+
+                    
                     <!-- ------------------ Comment Out  -------------------------- -->
                     <!-- <div class="output-list-item output-list-item-two">
 
@@ -89,49 +95,6 @@
                     <!-- ------------------ Comment Out  -------------------------- -->
                     
                 </div>
-                <!-- <div class="budget-output-list">
-                    <div class="output-list-item output-list-item-two">
-                        <div class="output-list-name">
-                            <div>
-                                <input type="checkbox" name="" id="">
-                            </div>
-                            <div>
-                                <p class="budget-name">Grocery</p>
-                                
-                            </div>
-                        </div>
-                        <div>
-                            <p class="budget-amount">$500.00</p>
-                        </div>
-                        <div>
-                            <button><i class="fa-solid fa-pen-to-square"></i></button>
-                            <button> <i class="fa-solid fa-trash"></i></button>
-                        </div>
-                    </div>
-                    
-                </div>
-                <div class="budget-output-list">
-                    <div class="output-list-item output-list-item-two">
-                        <div class="output-list-name">
-                            <div>
-                                <input type="checkbox" name="" id="">
-    
-                            </div>
-                            <div>
-                                <p class="budget-name"> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minima, architecto.</p>
-                                
-                            </div>
-                        </div>
-                        <div>
-                            <p class="budget-amount">$500.00</p>
-                        </div>
-                        <div>
-                            <button><i class="fa-solid fa-pen-to-square"></i></button>
-                            <button> <i class="fa-solid fa-trash"></i></button>
-                        </div>
-                    </div>
-                    
-                </div> -->
             </div>
            
         </div>
